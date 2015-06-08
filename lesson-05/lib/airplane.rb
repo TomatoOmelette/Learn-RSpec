@@ -3,10 +3,10 @@ class Airplane
   attr_accessor :manufacturer, :model, :max_gross_takeoff_weight_kg
 
   def initialize(aircraft_specs = {})
-    self.manufacturer = aircraft_specs['manufacturer'] || 'Cessna'
-    self.model = aircraft_specs['model'] || '172s'
+    self.manufacturer = aircraft_specs['manufacturer'] || 'Unknown manufacturer'
+    self.model = aircraft_specs['model'] || 'unknown model'
     self.max_gross_takeoff_weight_kg =
-         (aircraft_specs['max_gross_takeoff_weight_kg'] || 1157).to_i
+         (aircraft_specs['max_gross_takeoff_weight_kg'] || 0).to_i
   end
 
   def self.light_civil_aircraft_types

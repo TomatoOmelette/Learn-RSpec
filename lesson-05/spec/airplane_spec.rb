@@ -41,8 +41,9 @@ describe 'Airplane' do
     context 'when initialized without aircraft_specs arguments' do
       it 'returns the default aircraft description' do
         airplane = Airplane.new
-        expect(airplane.summary).to eq('Cessna 172s with a max gross takeoff '\
-                                       'weight of 1157 kg')
+        expect(airplane.summary).to eq('Unknown manufacturer unknown model '\
+                                       'with a max gross takeoff weight of 0 kg'
+                                      )
       end
     end
   end
