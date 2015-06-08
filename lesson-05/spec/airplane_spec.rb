@@ -20,7 +20,16 @@ describe 'Airplane' do
       airplane.max_gross_takeoff_weight_kg = 2495
       expect(airplane.max_gross_takeoff_weight_kg).to eq(2495)
     end
+  end
 
+  describe '.light_civil_aircraft_types' do
+    it 'returns an array of civil aircraft types' do
+      t = ['ultralight', 'light sport', 'utility transport', 'racing monoplane']
+      expect(Airplane.light_civil_aircraft_types).to eq(t)
+    end
+  end
+
+  describe '#summary' do
     it 'returns a description of the airplane' do
       aircraft_specs = { 'manufacturer' => 'Flight Design',
                          'model' => 'CTSW',
@@ -35,13 +44,6 @@ describe 'Airplane' do
         expect(airplane.summary).to eq('Cessna 172s with a max gross takeoff '\
                                        'weight of 1157 kg')
       end
-    end
-  end
-
-  describe '.light_civil_aircraft_types' do
-    it 'returns an array of civil aircraft types' do
-      t = ['ultralight', 'light sport', 'utility transport', 'racing monoplane']
-      expect(Airplane.light_civil_aircraft_types).to eq(t)
     end
   end
 end
